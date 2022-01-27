@@ -1,7 +1,7 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path")
 
-// ¸´ÖÆÎÄ¼þµ½Ö¸¶¨Ä¿Â¼
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ä¿Â¼
 const copyFiles = [
     {
         from: path.resolve("src/plugins/manifest.json"),
@@ -17,16 +17,16 @@ const copyFiles = [
     }
 ]
 
-// ¸´ÖÆ²å¼þ
+// ï¿½ï¿½ï¿½Æ²ï¿½ï¿½
 const plugins = [
     new CopyWebpackPlugin({
         patterns: copyFiles
     })
 ];
 
-// Ò³ÃæÎÄ¼þ
+// Ò³ï¿½ï¿½ï¿½Ä¼ï¿½
 const pages = {};
-// ÅäÖÃpopup.htmlÒ³Ãæ
+// ï¿½ï¿½ï¿½ï¿½popup.htmlÒ³ï¿½ï¿½
 const chromeName = ["popup"];
 
 chromeName.forEach(name => {
@@ -40,7 +40,7 @@ chromeName.forEach(name => {
 module.exports = {
     pages,
     productionSourceMap: false,
-    // ÅäÖÃcontent.js background.js
+    // ï¿½ï¿½ï¿½ï¿½content.js background.js
     configureWebpack: {
         entry: {
             content: "./src/content/main.js",
@@ -51,7 +51,7 @@ module.exports = {
         },
         plugins
     },
-    // ÅäÖÃcontent.css
+    // ï¿½ï¿½ï¿½ï¿½content.css
     css: {
         extract: {
             filename: "css/[name].css"
@@ -62,5 +62,13 @@ module.exports = {
             config.output.filename('js[name].js').end()
             config.output.chunkFilename('js/[name].js').end()
         }
-    }
+    },
+    devServer: {
+        port: '8080',
+        open: true,
+        overlay: {
+          warnings: false,
+          errors: true
+        }
+      }
 }

@@ -171,6 +171,7 @@ export default {
         headers: {},
         success: function (resp) {
           ret = resp
+          console.log(url, ret)
         },
         error: function (err) {
           console.log(err)
@@ -495,7 +496,8 @@ export default {
 
             count += 1;
             rowID = rowID.substring(4)
-            let url = "https://score.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
+            //let url = "https://score.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
+            let url = "http://live.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
             console.log('-------------------------')
             console.log(i + 1, rows.length, url)
             // 2. *************** ������ ***************
@@ -572,7 +574,7 @@ export default {
             if (beginDateTime >= now && beginDateTime <= now2) {
               count += 1;
               rowID = rowID.substring(4)
-              let url = "https://score.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
+              let url = "http://live.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
               console.log('-------------------------')
               console.log(i + 1, rows.length, url)
               // 2. *************** ������ ***************
@@ -650,7 +652,7 @@ export default {
             if (beginDateTime <= futureTime && beginDateTime >= futureTime2) {
               count += 1;
               rowID = rowID.substring(4)
-              let url = "https://score.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
+              let url = "http://live.nowscore.com/odds/3in1Odds.aspx?companyid=8&id=" + rowID
               console.log('-------------------------')
               console.log(i + 1, rows.length, url)
               // 2. *************** ������ ***************
